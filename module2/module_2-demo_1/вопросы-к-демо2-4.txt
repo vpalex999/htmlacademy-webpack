@@ -1,0 +1,16 @@
+Демо 2.4
+
+1. в package.json ключи dev и prod ничем не отличаются. почему?
+2. два файла конфигурации .eslintrc.js и .eslintrc.json - зачем? что бы показать разные варианты?
+3. в контексте выполнения демо2.4, не указано, что код должен быть перенесен в директорию src/
+4. Шаг3. вообще не понятно, я так не сделал, но вроде всё работает, как тогда у меня стили подключились? в консоле много ошибок типа:
+    Refused to apply style from 'http://localhost:8080/css/index.css' because its MIME type ('text/html') is not a supported stylesheet MIME type, and strict MIME checking is enabled.
+
+5. после сборки в консоли появились ошибки:
+    - Uncaught ReferenceError: hljs is not defined at (index):1604:7 ?
+
+    - В index.html указан скрипт <script src="./js/highlight.min.js"></script>, но в структуре dist нет такого пути?
+
+6. не подгрузились картинки юзеров.
+
+Мне бы хотелось разобраться с причинами и решить эти проблемы.

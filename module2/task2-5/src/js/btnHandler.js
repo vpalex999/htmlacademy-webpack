@@ -14,7 +14,7 @@ const btnHandler = () => {
   let result = 0;
 
   btn.addEventListener('click', () => {
-    result++;
+    result += 1;
     res.innerHTML = result;
   });
 };
