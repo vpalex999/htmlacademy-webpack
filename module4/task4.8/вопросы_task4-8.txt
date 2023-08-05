@@ -1,3 +1,7 @@
+Добрый день.
+появились вопросы к заданию 4.8
+ - я вроде всё сделал правильно. добавил нужные пакеты, сделал code-splitting:
+
 const path = require ('path');
 const HtmlWebpackPlugin = require ('html-webpack-plugin');
 const MiniCssExtractPlugin = require ('mini-css-extract-plugin');
@@ -99,3 +103,28 @@ module.exports = () => {
   }
   return config;
 };
+
+НО, при сборке с флагом "production" webpack всё равно выдаёт ошибку превышения лимита:
+
+WARNING in entrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  main (246 KiB)
+      reactVendor.js
+      defaultVendor.js
+      main.js
+      css/main_999a7892.css
+
+
+WARNING in webpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/
+
+
+после, я решил посмотреть оптимизированное решение по ссылке "https://up.htmlacademy.ru/assets/intensives/webpack/1/tasks-sources/zorky-solution.zip", НО загружается собственно базовое неоптимизированное решение.
+
+что не так?
+
+с Уважением,
+Бубенщиков Олег.
+
+
