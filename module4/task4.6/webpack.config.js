@@ -1,6 +1,7 @@
 const path = require ('path');
 const HtmlWebpackPlugin = require ('html-webpack-plugin');
 const MiniCssExtractPlugin = require ('mini-css-extract-plugin');
+const CssMinimizerWebpackPlugin = require ('css-minimizer-webpack-plugin');
 const FontminPlugin = require ('fontmin-webpack');
 
 const isProduction = process.env.NODE_ENV == 'production';
@@ -21,10 +22,10 @@ const config = {
     host: 'localhost',
   },
   plugins: [
-    new HtmlWebpackPlugin ({
+    new HtmlWebpackPlugin({
       template: 'index.html',
     }),
-    new FontminPlugin ({
+    new FontminPlugin({
       autodetect: true,
       glyphs: ['\uf0c8'],
       allowedFilesRegex: null,
@@ -80,7 +81,10 @@ module.exports = () => {
   if (isProduction) {
     config.mode = 'production';
 
-    config.plugins.push (new MiniCssExtractPlugin ());
+    config.plugins.push(
+      new MiniCssExtractPlugin(),
+      new CssMinimizerWebpackPlugin(),
+    );
   } else {
     config.mode = 'development';
   }
